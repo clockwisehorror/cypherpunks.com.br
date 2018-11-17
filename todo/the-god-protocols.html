@@ -5,7 +5,9 @@
 <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
   <div class="page-header">
     <h1 class="text-center">
-      The God Protocols <br><small>Nick Szabo</small>
+      	Os Protocolos de Deus
+	The God Protocols 
+	    <br><small>Nick Szabo</small>
     </h1>
     <h4 class="text-center">
       Originally published in 1997<br>
@@ -13,74 +15,89 @@
   </div>
 		
   <p>
-    Imagine the ideal protocol.  It would have the most trustworthy third party imaginable &ndash; a diety who is on <em>everybody's</em> side. All the parties would send their inputs to God. God would reliably determine the results and return the outputs. God being the ultimate in confessional discretion, no party would learn anything more about the other parties' inputs than they could learn from their own inputs and the output.
+    Imagine o protocolo perfeito. Teria a mais confiável terceira digna de confiança imaginável &ndash; a divindade que está no lado de <em>todo mundo</em>. Todos os participantes mandariam seus inputs para Deus. Deus determinaria de maneira confiável os resultados e retornaria os outputs. Deus sendo a máxima em discrição confissional, nenhum participante saberia mais sobre os inputs dos outros que o próprio input e seu output.
+	  Imagine the ideal protocol.  It would have the most trustworthy third party imaginable &ndash; a diety who is on <em>everybody's</em> side. All the parties would send their inputs to God. God would reliably determine the results and return the outputs. God being the ultimate in confessional discretion, no party would learn anything more about the other parties' inputs than they could learn from their own inputs and the output.
   </p>
 
   <p>
+    Além disso, no nosso mundo temporal lidamos com humanos e não com divindades. Ainda, muito frequentemente somos forçados a tratar pessoas em uma maneira quase teológica, pois nossa infraestrutura carece da segurança necessária para proteger a si mesma.
     Alas, in the our temporal world we deal with humans rather than deities. Yet, too often we are forced to treat people in a nearly theological manner, because our infrastructure lacks the security needed to protect ourselves.
   </p>
 
-  <h2>Trusted Third Party</h2>
+  <h2>Terceira Confiável Trusted Third Party</h2>
 
   <img class="img-responsive center-block" src="/static/img/docs/the-god-protocols/mutually.gif">
 
   <p>
+    Teóricos da segurança de rede resolveram esse problema recentemente a uma extensão exorbitante. Eles desenvolveram protocolos que crian máquinas virtuais entre dois ou mais participantes. Computação Segura Multiparticipante permite qualquer número de participantes de dividir uma computação, cada um recebendo no retorno apenas o que pode ser inferrido por seus próprios inputs e o output da computação. Essas máquinas virtuais tem a propriedade excitante de que o input de cada partipante é fortemente confidencial aos outros participantes. O programa e o output são visualizados por todos.
     Network security theorists have recently solved this problem to an astonishing extent. They have developed protocols which create virtual machines between two or more parties. Multiparty secure computation allows any number of parties to share a computation, each learning only what can be inferred from their own inputs and the output of the computation. These virtual machines have the exciting property that each party's input is strongly confidential from the other parties. The program and the output are shared by the parties. 
   </p>
 
   <p>
+    Por exemplo, nós poderiamos rodar uma planilha através da internet nesse computador virtual. Nós concordaríamos com um conjunto de fórmulas e montaríamos o computador virtual com essas fórmulas. Cada participante poderia ter suas próprias células de input, que ficariam branca para os outros participantes em seus computadores. Os participantes compartilhariam as células com os outputs. Cada input nós realizamos com nossa informação privada e nas nossas células de input. Alice poderia saber somente o quanto ela poderia inferir de suas células e das células com os outputs.
     For example, we could run a spreadsheet across the Internet on this virtual computer. We would agree on a set of formulas and set up the virtual computer with these formulas. Each participant would have their own input cells, which remain blank on the other participants' computers. The participants share output cell(s). Each input our own private data into our input cells. Alice could only learn only as much about the other participants' input cells as she could infer from her own inputs and the output cells.
   </p>
 
-  <h2>Mathematically Trustworthy Protocol</h2>
+  <h2>Protocolo Matematicamente Confiável Mathematically Trustworthy Protocol</h2>
 
   <img class="img-responsive center-block" src="/static/img/docs/the-god-protocols/virtual.gif">
 
   <p>
+    Existem três grandes limitações. A primeira é a de que esse computador virtual é muito lento; em alguns casos, uma calculação aritmética por mensagem na rede. Atualmente isso é, no máximo, prático somente para pequenos cálculos artimética ou cálculo lógico usado em conjunto a ou componente de protocolos e computações mais eficientes.
     There are three major limitations. The first is that this virtual computer is very slow: in some cases, one arithmetic calculation per network message. Currently it is at best practical only for small logic or arithmetic calculations used as an adjunct to or component of more efficient computations and protocols.   
   </p>
 
   <p>
+    A Segunda é que existe um balanço entre privacidade, justiça, e tolerância à falhas. Justiça significa que todos sabem dos resultados de maneira que ninguém consegue vantagem por aprender antes. Tolerância à falta pode prover a robustez contra a minoria, para que somente uma maioria saindo do protocolo para que ele seja suspenso, ou ele pode ser não-robusto mas parar-quando-falhar, para que um participante sozinho possa encerrar o protocolo. Muitos artigos tem discutidos a fração de participantes necessária para que seja assegurada o descobrimento do output correto. Num resultado tradicional, justiça e privacidade não podem ser simultaneamente atingidas com uma maioria imperfeita. Artigos recentes<sup><a href="#fn3" id="ref3">[3]</a></sup><sup><a href="#fn4" id="ref4">[4]</a></sup><sup><a href="#fn5" id="ref5">[5]</a></sup><sup><a href="#fn6" id="ref6">[6]</a></sup> produziram protocolos justos e privados até com maiorias imperfeitas. Eles trocam robustez por privacidade e justiça contra qualquer proporção de participantes imperfeitos. A vantagem dessa abordagem parar-quando-falhar é que podemos normalmente encontrar novos participantes e recomeçar novamente, mas não queremos sofre perdas irreversíveis como vazamento de informação, ser deixado segurando a bolsa inteira, ou ser convencido de um resultado incorreto.
     The second is that there is a tradeoff between privacy, fairness, and fault tolerance. Fairness means everybody learning the results in such a way that nobody can gain an advantage by learning first. Fault tolerance can provide robustness against a minority, so that it takes a majority dropping out to halt the protocol, or it can be nonrobust but fail-stop, so that a single participant can terminate the protocol. Many papers have discussed the fraction of parties one must trust in order to be assured of learning the correct output. In traditional results, fairness and privacy could not both be achieved with a faulty majority. Recent papers<sup><a href="#fn3" id="ref3">[3]</a></sup><sup><a href="#fn4" id="ref4">[4]</a></sup><sup><a href="#fn5" id="ref5">[5]</a></sup><sup><a href="#fn6" id="ref6">[6]</a></sup> have produced fair and private protocols even with faulty majorities. They trade robustness for privacy and fairness against any proportion of faulty parties. The advantage of this fail-stop approach is that one can usually find new partners and start over again, but one does not want to suffer irreversible losses such as leaking information, being left holding the bag, or being convinced of an incorrect result.
   </p>
 
   <p>
+    A terceira limitação é que, longe de ser onisciente ou onipotence, o protocolo vai alcançar somente o que é especificado no algoritmo e nos inputs. Ele não terá a capacidade de substituir Terceiros confiáveis humanos onde esses participantes fornecerem insights ou conhecimento que não pode ser fornecido por um computador.
     The third limitation is that, far from being omniscient or omnipotent, the protocol will accomplish only what is specified in the algorithm and the inputs. It won't be able to replace human trusted third parties where those parties provide insight or knowledge that cannot be provided by a computer.
   </p>
 
   <p>
-    With these caveats, any algorithmic intermediary can, in principle, be replaced by a trustworthy virtual computer. In practice, because of the three complications, we usually construct more limited protocols out of more efficient elements. 
+Com essas considerações, qualquer algoritmo intermediário podem, em princípio, pode ser substituído por um computador virtual confiável. Na prática, em razão dessas três complicações, nós normalmente construímos protocolos mais limitados de elementos mais eficientes.
+With these caveats, any algorithmic intermediary can, in principle, be replaced by a trustworthy virtual computer. In practice, because of the three complications, we usually construct more limited protocols out of more efficient elements. 
   </p>
 
   <p>
+    Teoria de computação multiusuário, ao tornar possível intermediações virtuais privadas, tem grandes implicação, em teoria, para todos os tipos de <a href="http://nakamotoinstitute.org/formalizing-securing-relationships.html">relações contratuais.</a> Isso pode ser visto de maneira mais clara na área de negociações. Um "mecanismo" na economia é o modelo abstrato de uma instituição que se comunica com seus participantes através de mensagens, e cuja regras podem ser especificada em um algoritmo. Essas instituições podem ser leilões, trocas, votações, e por aí vai. Eles tipicamente implementam algum tipo de negociação ou um processo de tomada de decisão.
     Multiparty computation theory, by making possible privy virtual intermediation, has major implications, in theory, for all kinds of <a href="http://nakamotoinstitute.org/formalizing-securing-relationships.html">contractual relationships.</a> This can be seen most clearly in the area of negotiations. A "mechanism" in economics is an abstract model of an institution which communicates with its participants via messages, and whose rules can be specified algorithmically. These institutions can be auctions, exchanges, voting, and so on. They typically implement some kind of negotiation or decision making process. 
   </p>
 
-  <!-- doesn't look like an auction...
+  <!-- não parece com um leilão doesn't look like an auction...
   <img src="http://209.73.251.147/smithsonian/issues96/oct96/images/auctioneer.gif" align="bottom">
   -->
 
   <p>
+    Economistas podem presumir que o intermediário que opera o mecanismo é confiável. Aqui vai um simples exemplo de uso do computador virtual para o mecanismo. Alice pode submeter um lance, e Bob um preço, e então o programa virtual compartilhado que tem somente uma instrução, "Alice maior que Bob?". O computador então retorna "verdadeiro" se o lance de Alice for maior que o preço proposto por Bob. Um computador um pouco mais sofisticado pode então decidir qual será o preço de fechamento de acordo com um número de diferentes algoritmos (o lance da Alice, o preço proposto por Bob, o meio do caminho etc.) Isso implementa o mecanismo "barganha cega" sem nenhum intermediário confiável.
     Economists assume a trusted intermediary operates the mechanism. Here's a simple example of using this virtual computer for a mechanism. Alice can submit a bid price, and Bob an ask price, then their shared virtual program which has one instruction, "A greater than B?". The computer then returns "true" if Alice's bid is greater than Bob's offer. A slightly more sophisticated computer may then decide the settlement price according to a number of different algorithms (Alice's bid, Bob's ask, split the difference, etc.) This implements the mechanism "blind bargaining" with no trusted intermediary. 
   </p>
 
   <p>
+    Em princípio, desde que qualquer problema computacional possa ser resolvido nesse computador virtual (eles são "Turing Completude"), qualquer mecanismo econômico computável pode ser implementado sem um intermediário confiável. Na prática, nós encontramos as três limitações discutidas acima. Mas a prova da existência, que um mecanismo econômico possa ser executado sem um intermediário confiável, é muito empolgante. Isso significa que, em princípio, qualquer contrato que pode ser negociado através de uma terceira confiável (como um leilão ou uma troca) podem ser negociadas diretamente. Então, de uma forma abstrata, a úncida forma remanescente de problema "difícil" num contrato inteligente são (a) problemas considerados dificíes até com intermediários confiávels (por razões econômicas convencionais), e (b) a tarefa de especificar em algoritmo as regras de negociação e os termos do output do contrato (Isso inclui casos onde um intermediário adiciona conhecimento indisponível aos participantes , como um advogado dando conselhos em como montar um contrato). Na prática, muitos problemas que podem ser resolvidos a princípio com computação multiusuário TERMINAR
     In principle, since any computable problem can be solved on this virtual computer (they are "Turing complete"), any computable economic mechanism can be implemented without a trusted intermediary. In practice, we face the three limitations discussed above. But the existence proof, that any economic mechanism can be run without a trusted intermediary, is very exciting. This means that, in principle, any contract which can be negotiated through a trusted third party (such as an auction or exchange) can be negotiated directly. So, in some abstract sense, the only remaining "hard" problems in smart contract negotiations are (a) problems considered hard even with a trusted intermediary (for the standard economic reasons), and (b) the task of algorithmically specifying the negotiating rules and output contract terms (This includes cases where an intermediary adds knowledge unavailable to the participants, such as a lawyer giving advice on how to draft a contract). In practice, many problems which can be solved in principle with multiparty computation will re-arise when we implement protocols in an efficient, practical manner. The God Protocols give us a target to shoot for.
   </p>
 
   <p>
+    Aplicar esse tipo de análise a fase de performance dos contratos é menos direta. Para começar, as teorias econômicas da fase de performance não são tão desenvolvidas ou simples como a teoria do mecanismo das negociações. É verdade, a maioria das teorias econômicas simplesmente presumo que todos os contratos podem ser perfeitamente e sem custo algum para ser assegurado. Algum tipo de literatura sobre "custo da transação" tem começado a ir além dessa presunção, mas existem poucos resultados contundentes ou teorias de consenso na área da técnica e custos da execução do contrato.
     Applying this kind of analysis to the performance phase of contracts is less straightforward. For starters, economic theories of the performance phase are not as well developed or simple as the mechanism theory of negotiations. Indeed, most economic theory simply assumes that all contraccts can be perfectly and costlessly enforced. Some of the "transaction cost" literature has started to move beyond this assumption, but there are few compelling results or consensus theories in the area of techniques and costs of contract enforcement. 
   </p>
 
   <p>
+    A Análise da fase de performance com a teoria de computação segura multiusuário parece somente aplicar-se aos contratos que podem ser realizados dentro do computador virtual. Mas o uso de logs de auditoria pós-inesquecíveis, combinados com os protocolos de auditoria rodando dentro do computador virtual compartilhado, permite uma ampla variedade de performances fora do computador virtual para ao menos ser observada e verificada por árbitros selecionados, ainda que não proativamente auto-executável.
     Performance phase analysis with multiparty secure computer theory would seem to apply only to those contracts which can be performed inside the virtual computer. But the use of post-unforgeable auditing logs, combined with running auditing protocols inside the shared virtual computer, allows a wide variety of performances outside the virtual computer to at least be observed and verified by selected arbitrators, albeit not proactively self-enforced. 
   </p>
 
   <p>
+    Os participantes nesse protocolo de <a href="http://szabo.best.vwh.net/confidential.html">auditoria confidencial</a> mútua pode verificar que os livros correspondem0se com os detalhes das transações arquivadas no log de transações previamente comitado, e que os números adicionam-se corretamente. Os participantes podem computar as estatísticas sumárias em seus logs de transação confidencialmente compartilhado, incluindo checagem cruzada de logs contra as contrapartes das transações, sem revelar esse logs. Se eles somente souberem o que puderem inferir das estatísticas, não podem ver detalhes das transações. Outra possiblidade intrigante é que o computador virtual possa manter o estados por longos períodos de tempo, permitindo formas sofisticadas de privacidade e auto-executabilidade.
     The participants in this mutually <a href="http://szabo.best.vwh.net/confidential.html">confidential auditing</a> protocol can verify that the books match the details of transactions stored in a previously committed transaction log, and that the numbers add up correctly. The participants can compute summary statistics on their confidentially shared transaction logs, including cross-checking of the logs against counterparties to a transaction, without revealing those logs. They only learn what can be inferred from the statistics, can't see the details of the transactions. Another intriguing possibility is that the virtual computer can keep state over long periods of time, allowing sophisticated forms of privy and self-enforcing <a href="http://szabo.best.vwh.net/garnishment.html">secured credit.</a>
   </p>
 
   <p>
+    Se auditorias mutuamente confidencias se tornar prátical algum dia, nós seremos capazes de ganhar alta confiabilidade na veracidade das declarações dos participantes sem revelar informações sobre a identidade ou outros detalhes da transação subscrita nesses relatórios. Isso poderia servir de base para um <a href="http://szabo.best.vwh.net/negative_rep.html">sistema de reputações</a> sólido, e outros sistemas terceiros confiáveis, que mantenham sua integridade através do tempo, das comunicações, das sumarizações, e preserve a confidencialidade dos participantes das transações. Sabendo que a auditoria confidencial mútua pode ser alcançada em princípio vai nos dar esperança para nortear-nos em busca de soluções práticas para esses importantes problemas.
     If mutually confidential auditing ever becomes practical, we will be able to gain high confidence in the factuality of counterparties' claims and reports without revealing identifying and other detailed information from the transactions underlying those reports. These would provide the basis for solid <a href="http://szabo.best.vwh.net/negative_rep.html">reputation systems</a>, and other trusted third party systems, that maintain integrity across time, communications, summarization, and preserve confidentiality for transaction participants. Knowing that mutually confidential auditing can be accomplished in principle will hopefully lead us to practical solutions to these important
     problems.
   </p>
